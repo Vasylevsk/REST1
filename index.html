@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Contacts</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <form id="newContactForm" class="form">
+      <table class="u-full-width">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="contactsList"></tbody>
+        <tfoot>
+          <tr>
+            <td>
+              <input type="hidden" name="id" class="form-input" />
+              <input
+                type="text"
+                name="name"
+                id="nameInput"
+                class="form-input"
+              />
+            </td>
+            <td>
+              <input
+                type="text"
+                name="email"
+                id="emailInput"
+                class="form-input"
+              />
+            </td>
+            <td>
+              <input
+                type="text"
+                name="phone"
+                id="phoneInput"
+                class="form-input"
+              />
+            </td>
+            <td>
+              <input type="submit" id="saveContactBtn" value="Save Contact" />
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+    </form>
+    <script type="text/template" id="contactTemplate">
+      <tr class="contact-row" data-id="{{id}}">
+          <td>{{name}}</td>
+          <td>{{email}}</td>
+          <td>{{phone}}</td>
+          <td>
+            <button type="button" class="edit-btn">Edit</button>
+            <button type="button" class="delete-btn">Delete</button>
+        </td>
+      </tr>
+    </script>
+  </body>
+</html>
